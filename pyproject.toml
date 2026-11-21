@@ -1,0 +1,37 @@
+[project]
+name = "fastapi-sqlmodel"
+version = "0.1.0"
+description = "FastAPI application with SQLModel, PostgreSQL 18, and Alembic"
+readme = "README.md"
+authors = [
+    { name = "S. Gökhan Topçu", email = "gtopcu@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.20.1",
+    "faker>=40.54.0",
+    "fastapi>=0.165.0",
+    "httpx2>=2.16.2",
+    "psycopg[binary]>=3.3.9",
+    "pydantic-settings>=2.16.3",
+    "pytest>=9.2.0",
+    "sqlmodel>=0.0.50",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+fastapi-sqlmodel = "fastapi_sqlmodel:main"
+
+[build-system]
+requires = ["uv_build>=0.12.18,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-v -s"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.6",
+]
