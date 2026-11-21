@@ -42,7 +42,6 @@ extend-immutable-calls = [
 
 # Exclude a variety of commonly ignored directories.
 exclude = [
-    ".bzr",
     ".direnv",
     ".eggs",
     ".git",
@@ -61,6 +60,8 @@ exclude = [
     "build",
     "dist",
     "node_modules",
+    "env",
+    ".env",
     "venv",
     ".venv",
     ".pytest_cache",
