@@ -3,6 +3,16 @@ line-length = 88
 indent-width = 4
 target-version = "py314"
 
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".ruff_cache",
+    "env",
+    ".env",
+    ".pytest_cache",
+    "__pycache__",
+]
+
 [lint]
 # Selected default rules: Pyflakes (F), pycodestyle errors/warnings (E, W), isort (I), bugbear (B), pyupgrade (UP)
 select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
@@ -27,55 +37,12 @@ extend-immutable-calls = [
     "Header",
 ]
 
-# Commented out code
-# ignore = ["ERA001"]
-# Organize imports
-# ignore = ["I001"]     
-# except Exception
-# ignore = ["BLE001"]
-
 [lint.per-file-ignores]
 # Ignore `F401` (unused imports) in all `__init__.py` files
 "__init__.py" = ["F401"]
-# Ignore `E402` (import violations) in all `tests/` directories
-# "tests/*" = ["E402"]
-
-# Exclude a variety of commonly ignored directories.
-exclude = [
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "env",
-    ".env",
-    "venv",
-    ".venv",
-    ".pytest_cache",
-    "__pycache__"
-]
 
 [format]
 quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
-
-# [tool.pytest.ini_options]
-# pythonpath = "src"
-# pythonpath = ["."]
-# testpaths = ["tests"]
-# addopts = "-v -s"

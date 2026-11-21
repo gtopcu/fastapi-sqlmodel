@@ -17,6 +17,7 @@ from app.routers import companies, employees
 # finally:
 #     user_context.reset(token)
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
     # Lifespan startup actions (if any)
