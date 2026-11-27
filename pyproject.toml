@@ -31,6 +31,10 @@ pythonpath = ["."]
 testpaths = ["tests"]
 addopts = "-v -s"
 
+# [tool.fastapi]
+# entrypoint = "main:app"
+# uvx library-skills install --skill fastapi --yes --claude
+
 [dependency-groups]
 dev = [
     "ruff>=0.17.6",
