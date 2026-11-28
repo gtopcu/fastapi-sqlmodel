@@ -54,9 +54,7 @@ def update_employee(
     if "company_id" in update_data and update_data["company_id"] is not None:
         company = session.get(Company, update_data["company_id"])
         if not company:
-            raise ValueError(
-                f"Company with id {update_data['company_id']} not found"
-            )
+            raise ValueError(f"Company with id {update_data['company_id']} not found")
 
     if "name" in update_data:
         db_employee.name = update_data["name"]

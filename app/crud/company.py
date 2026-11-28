@@ -20,9 +20,7 @@ def get_company(session: Session, company_id: int) -> Company | None:
     return session.get(Company, company_id)
 
 
-def get_companies(
-    session: Session, offset: int = 0, limit: int = 100
-) -> list[Company]:
+def get_companies(session: Session, offset: int = 0, limit: int = 100) -> list[Company]:
     """Retrieve multiple companies with pagination."""
     statement = select(Company).offset(offset).limit(limit)
     return list(session.exec(statement).all())

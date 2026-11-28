@@ -36,7 +36,7 @@ class Company(CompanyBase, table=True):
         ),
         description="Timestamp when the company was last updated",
     )
-    employees: list["Employee"] = Relationship(
+    employees: list[Employee] = Relationship(
         back_populates="company",
         cascade_delete=True,
     )
